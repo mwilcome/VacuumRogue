@@ -58,3 +58,17 @@ mesh = SubResource("BoxMesh_d7p74")
 shape = SubResource("BoxShape3D_qj4cn")
 
 [node name="TrashContainer" type="Node3D" parent="."]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 81.0
+offset_bottom = 45.0
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 71.0
+offset_bottom = 33.0
+text = "Score: 0"
