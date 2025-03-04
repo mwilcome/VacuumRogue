@@ -64,3 +64,6 @@ label_settings = SubResource("LabelSettings_j3oqj")
 [node name="HouseCollision" type="CollisionShape3D" parent="House/HouseBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.2, 0)
 shape = SubResource("BoxShape3D_opo1c")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
