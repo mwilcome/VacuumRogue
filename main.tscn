@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dl7ry0x4mevi3"]
+[gd_scene load_steps=11 format=3 uid="uid://dl7ry0x4mevi3"]
 
 [ext_resource type="Script" path="res://vacuum.gd" id="1_ehgvg"]
 [ext_resource type="Script" path="res://main.gd" id="1_nlmj6"]
@@ -24,6 +24,9 @@ size = Vector3(10, 0.2, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qj4cn"]
 size = Vector3(10, 0.2, 10)
+
+[sub_resource type="LabelSettings" id="LabelSettings_j3oqj"]
+font_size = 24
 
 [node name="Main" type="Node3D" groups=["trash"]]
 script = ExtResource("1_nlmj6")
@@ -72,3 +75,4 @@ offset_top = 10.0
 offset_right = 71.0
 offset_bottom = 33.0
 text = "Score: 0"
+label_settings = SubResource("LabelSettings_j3oqj")
