@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dl7ry0x4mevi3"]
 
 [ext_resource type="Script" path="res://vacuum.gd" id="1_ehgvg"]
-[ext_resource type="PackedScene" uid="uid://b58kqkhkkeq8k" path="res://trash.tscn" id="2_0l0g1"]
+[ext_resource type="Script" path="res://main.gd" id="1_nlmj6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qk4mp"]
 albedo_color = Color(0, 0, 1, 1)
@@ -25,7 +25,8 @@ size = Vector3(10, 0.2, 10)
 [sub_resource type="BoxShape3D" id="BoxShape3D_qj4cn"]
 size = Vector3(10, 0.2, 10)
 
-[node name="Main" type="Node3D"]
+[node name="Main" type="Node3D" groups=["trash"]]
+script = ExtResource("1_nlmj6")
 
 [node name="PlayerCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 5, 5)
@@ -57,33 +58,3 @@ mesh = SubResource("BoxMesh_d7p74")
 shape = SubResource("BoxShape3D_qj4cn")
 
 [node name="TrashContainer" type="Node3D" parent="."]
-
-[node name="Trash" parent="TrashContainer" instance=ExtResource("2_0l0g1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.1, 1)
-
-[node name="Trash2" parent="TrashContainer" instance=ExtResource("2_0l0g1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.1, 1)
-
-[node name="Trash3" parent="TrashContainer" instance=ExtResource("2_0l0g1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.1, 4)
-
-[node name="Trash4" parent="TrashContainer" instance=ExtResource("2_0l0g1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.1, 4)
-
-[node name="Trash5" parent="TrashContainer" instance=ExtResource("2_0l0g1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3, 0.1, 3)
-
-[node name="Trash6" parent="TrashContainer" instance=ExtResource("2_0l0g1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.1, 1)
-
-[node name="Trash7" parent="TrashContainer" instance=ExtResource("2_0l0g1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.1, -1.5)
-
-[node name="Trash8" parent="TrashContainer" instance=ExtResource("2_0l0g1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.1, 3)
-
-[node name="Trash9" parent="TrashContainer" instance=ExtResource("2_0l0g1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.1, -4)
-
-[node name="Trash10" parent="TrashContainer" instance=ExtResource("2_0l0g1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.1, -3)
