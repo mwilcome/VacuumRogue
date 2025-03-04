@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://dl7ry0x4mevi3"]
+
+[ext_resource type="Script" path="res://vacuum.gd" id="1_ehgvg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qk4mp"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_t0gtn"]
+material = SubResource("StandardMaterial3D_qk4mp")
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pw70h"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_16n78"]
+albedo_color = Color(0.0313726, 0.0313726, 0.0313726, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_d7p74"]
+size = Vector3(10, 0.2, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qj4cn"]
+size = Vector3(10, 0.2, 10)
+
+[node name="Main" type="Node3D"]
+
+[node name="PlayerCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 5, 5)
+
+[node name="Vacuum" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+script = ExtResource("1_ehgvg")
+
+[node name="VacuumMesh" type="MeshInstance3D" parent="Vacuum"]
+mesh = SubResource("BoxMesh_t0gtn")
+
+[node name="VacuumCollision" type="CollisionShape3D" parent="Vacuum"]
+shape = SubResource("BoxShape3D_pw70h")
+
+[node name="FloorBody" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+
+[node name="Floor" type="MeshInstance3D" parent="FloorBody"]
+material_override = SubResource("StandardMaterial3D_16n78")
+mesh = SubResource("BoxMesh_d7p74")
+
+[node name="FloorCollision" type="CollisionShape3D" parent="FloorBody"]
+shape = SubResource("BoxShape3D_qj4cn")
