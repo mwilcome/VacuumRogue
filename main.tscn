@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dl7ry0x4mevi3"]
+[gd_scene load_steps=10 format=3 uid="uid://dl7ry0x4mevi3"]
 
 [ext_resource type="Script" path="res://vacuum.gd" id="1_ehgvg"]
 [ext_resource type="PackedScene" uid="uid://b58kqkhkkeq8k" path="res://trash.tscn" id="2_0l0g1"]
@@ -12,6 +12,9 @@ size = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pw70h"]
 size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_y525g"]
+radius = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_16n78"]
 albedo_color = Color(0.0313726, 0.0313726, 0.0313726, 1)
@@ -36,6 +39,11 @@ mesh = SubResource("BoxMesh_t0gtn")
 
 [node name="VacuumCollision" type="CollisionShape3D" parent="Vacuum"]
 shape = SubResource("BoxShape3D_pw70h")
+
+[node name="SuctionZone" type="Area3D" parent="Vacuum"]
+
+[node name="SuctionCollision" type="CollisionShape3D" parent="Vacuum/SuctionZone"]
+shape = SubResource("SphereShape3D_y525g")
 
 [node name="FloorBody" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
